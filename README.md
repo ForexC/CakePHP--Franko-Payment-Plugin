@@ -3,8 +3,8 @@
 Containing **Franko IPN** (Franko Instant Payment Notification)
 
 * Version 1.0
-* Author: Mark Scherer | Christopher Franko
-* Website: http://www.dereuromark.de | Frankos.org
+* Authors: Mark Scherer | Christopher Franko
+* Website: http://www.dereuromark.de | http://www.Frankos.org
 * License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 
 ## Requirement
