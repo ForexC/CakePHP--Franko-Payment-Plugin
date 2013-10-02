@@ -90,6 +90,6 @@ It could become a complete "Payment" plugin combining all methods and services o
 I spent quite a few days developing this plugin and testing all features.
 Feel free to donate if you use this plugin
 
-* Address: 161AcnPykE42e4ErQNR9B73Bb78Jy81AN6
+* Frk - FE35Ez4oq8jVfEaKJAHTugkkwzVVhuLxVZ
 
 Enjoy!
