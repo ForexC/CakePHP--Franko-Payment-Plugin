@@ -1203,7 +1203,7 @@
 	* It will not re-encode jsonrpcval objects.
 	*
 	* @param mixed $php_val the value to be converted into a jsonrpcval object
-	* @param array $options	can include '../../bitcoin/includes/encode_php_objs'
+	* @param array $options	can include '../../franko/includes/encode_php_objs'
 	* @return jsonrpcval
 	* @access public
 	*/

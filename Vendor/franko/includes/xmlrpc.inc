@@ -3401,7 +3401,7 @@ xmlrpc_encode_entitites($this->errstr, $GLOBALS['xmlrpc_internalencoding'], $cha
 	* @author Dan Libby (dan@libby.com)
 	*
 	* @param mixed $php_val the value to be converted into an xmlrpcval object
-	* @param array $options	can include '../../bitcoin/includes/encode_php_objs', 'auto_dates', 'null_extension' or 'extension_api'
+	* @param array $options	can include '../../franko/includes/encode_php_objs', 'auto_dates', 'null_extension' or 'extension_api'
 	* @return xmlrpcval
 	*/
 	function php_xmlrpc_encode($php_val, $options=array())
