@@ -65,7 +65,7 @@ class PaymentHelper extends AppHelper {
 
 	}
 
-	public function bitcoin($options) {
+	public function franko($options) {
 
 
 	}

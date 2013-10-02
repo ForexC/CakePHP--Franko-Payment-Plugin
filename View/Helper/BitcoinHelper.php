@@ -1,13 +1,13 @@
 <?php
 App::uses('AppHelper', 'View/Helper');
 
-/** Bitcoin Helper
+/** Franko Helper
  *
  * @author Mark Scherer
  * @link http://www.dereuromark.de
  * @license MIT
  */
-class BitcoinHelper extends AppHelper {
+class FrankoHelper extends AppHelper {
 
 	public $helpers = array('Html');
 
@@ -29,7 +29,7 @@ class BitcoinHelper extends AppHelper {
 		if ($x = Configure::read('Localization.thousands')) {
 			$this->settings['sep'] = $x;
 		}
-		$this->settings = array_merge($this->settings, (array)Configure::read('Bitcoin'));
+		$this->settings = array_merge($this->settings, (array)Configure::read('Franko'));
 
 		parent::__construct($View, $settings);
 	}
@@ -40,9 +40,9 @@ class BitcoinHelper extends AppHelper {
 	 */
 	public function paymentBox($amount, $address) {
 		if ($address === null) {
-			$address = Configure::read('Bitcoin.address');
+			$address = Configure::read('Franko.address');
 		}
-		$string = '<div class="bitcoinBox">';
+		$string = '<div class="frankoBox">';
 		$string .= '<div class="amount">'.__('Value').': '.$this->value($amount).'</div>';
 		$string .= '<code class="address">'.h($address).'</code>';
 		$string .= '</div>';
@@ -55,9 +55,9 @@ class BitcoinHelper extends AppHelper {
 	 */
 	public function donationBox($address = null) {
 		if ($address === null) {
-			$address = Configure::read('Bitcoin.address');
+			$address = Configure::read('Franko.address');
 		}
-		$string = '<div class="bitcoinBox">';
+		$string = '<div class="frankoBox">';
 		$string .= '<code class="address">'.h($address).'</code>';
 		$string .= '</div>';
 		return $string;
@@ -67,7 +67,7 @@ class BitcoinHelper extends AppHelper {
 		if ($size == 16) {
 			$size = null;
 		}
-		$path = '/payment/img/bitcoin%s.png';
+		$path = '/payment/img/franko%s.png';
 		$path = sprintf($path, (String)$size);
 		return $this->Html->image($path, $options);
 	}

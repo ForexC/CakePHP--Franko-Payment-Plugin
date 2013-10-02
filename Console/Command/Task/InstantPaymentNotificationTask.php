@@ -16,13 +16,13 @@ class InstantPaymentNotificationTask extends AppShell {
 	}
 
 	public function execute() {
-		$this->BitcoinAddress = ClassRegistry::init('Payment.BitcoinAddress');
+		$this->FrankoAddress = ClassRegistry::init('Payment.FrankoAddress');
 
-		if ($this->BitcoinAddress->update()) {
-			$this->log('Shell '.$this->name.' successfully completed', 'bitcoin');
+		if ($this->FrankoAddress->update()) {
+			$this->log('Shell '.$this->name.' successfully completed', 'franko');
 			return true;
 		}
-		$this->log('Shell '.$this->name.' aborted', 'bitcoin');
+		$this->log('Shell '.$this->name.' aborted', 'franko');
 		return false;
 	}
 

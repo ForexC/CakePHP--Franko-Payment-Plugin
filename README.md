@@ -1,15 +1,15 @@
-# CakePHP Payment Plugin
+# CakePHP Franko Payment Plugin
 
-Containing **Bitcoin IPN** (Bitcoin Instant Payment Notification)
+Containing **Franko IPN** (Franko Instant Payment Notification)
 
 * Version 1.0
-* Author: Mark Scherer
-* Website: http://www.dereuromark.de
+* Author: Mark Scherer | Christopher Franko
+* Website: http://www.dereuromark.de | Frankos.org
 * License: MIT License (http://www.opensource.org/licenses/mit-license.php)
-* For example implementation code see http://www.dereuromark.de/2011/07/20/bitcoins-and-cakephp/
 
 ## Requirement
 CakePHP 2.x
+Franko 0.8.4.1
 
 ## TODOS:
 * full non-daemon "offline" mode? using the webservice completely without any local daemon necessary
@@ -26,11 +26,11 @@ CakePHP 2.x
 		$ cake schema create payment -plugin payment
 
 
-# Bitcoin Setup:
-1. Download program at http://www.bitcoin.org/ for testing purposes
-2. Set up Bitcoind daemon on your webserver (this is the most difficult step if you don't use the newest system)
+# Franko Setup:
+1. Download program at http://www.frankos.org/ for testing purposes
+2. Set up frankod daemon on your webserver (this is the most difficult step if you don't use the newest system)
 3. Get some coins :)
-4. Provide a config array in your configs: $config['Bitcoin'] = array(..) with your preferences and credentials
+4. Provide a config array in your configs: $config['Franko'] = array(..) with your preferences and credentials
 
 	### important ones are:
 
@@ -42,19 +42,19 @@ CakePHP 2.x
 If you want to use the built in admin access to IPNs:
 
 1. Make sure you're logged in as an Administrator via the Auth component.
-2. Navigate to `www.yoursite.com/admin/payment/bitcoin`
+2. Navigate to `www.yoursite.com/admin/payment/franko`
 
 
-## Bitcoin Notification Callback:
+## Franko Notification Callback:
 Create a function in your `/app/AppModel.php` like so:
 
-	public function afterBitcoinNotification($txnId){
+	public function afterFrankoNotification($txnId){
 		//Here is where you can implement code to apply the transaction to your app.
 		//for example, you could now mark an order as paid, a subscription, or give the user premium access.
 		//retrieve the transaction using the txnId passed and apply whatever logic your site needs.
 
-		$transaction = ClassRegistry::init('Payment.BitcoinAddress')->findById($txnId);
-		$this->log($transaction['BitcoinAddress']['id'], 'bitcoin');
+		$transaction = ClassRegistry::init('Payment.FrankoAddress')->findById($txnId);
+		$this->log($transaction['FrankoAddress']['id'], 'franko');
 
 		if(...) {
 			//Yay!  We have the money!
@@ -63,22 +63,22 @@ Create a function in your `/app/AppModel.php` like so:
 		}
 	}
 
-## Bitcoin Helper: (optional)
-1. Add `Payment.Bitcoin` to your helpers list in `AppController.php`
+## Franko Helper: (optional)
+1. Add `Payment.Franko` to your helpers list in `AppController.php`
 
-	public $helpers = array('Html','Form','Payment.Bitcoin');
+	public $helpers = array('Html','Form','Payment.Franko');
 
-### Usage: (view the actual /View/Helpers/BitcoinHelper.php for more information)
-		$this->Bitcoin->image(64);
+### Usage: (view the actual /View/Helpers/FrankoHelper.php for more information)
+		$this->Franko->image(64);
 
-		$this->Bitcoin->paymentBox(12.3, YOUR_ADDRESS);
+		$this->Franko->paymentBox(12.3, YOUR_ADDRESS);
 
 
 # Tips
-* The Lib itself has offline capacities. It is possible to use certain features even without having to run a local bitcoin daemon (at least for testing purposes on a local machine).
+* The Lib itself has offline capacities. It is possible to use certain features even without having to run a local franko daemon (at least for testing purposes on a local machine).
 * Create your own admin interface for the payment methods. You can use the existing one as a template.
 * Start playing around with "little" money. If sth goes wrong, your money might get lost.
-* Use every bitcoin address only once! The default implementation will check only check the amount received. It can not (protocol!) distinguish between different people sending money to those addresses. therefore it cannot be used more than once if you don't want conflicts.
+* Use every franko address only once! The default implementation will check only check the amount received. It can not (protocol!) distinguish between different people sending money to those addresses. therefore it cannot be used more than once if you don't want conflicts.
 
 # Final notes
 As tempting as it was to integrate the Paypal IPN Plugin which this plugin is based on, I decided not to do this at the moment.

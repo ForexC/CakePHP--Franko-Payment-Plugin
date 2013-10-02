@@ -134,7 +134,7 @@ class PrepaidAccountsController extends PaymentAppController {
 				$this->Transaction->initSkrill($array);
 				$this->Skrill->redirect($res);
 
-			case 'bitcoin':
+			case 'franko':
 				//TODO
 				break;
 			case 'sofortbanking':

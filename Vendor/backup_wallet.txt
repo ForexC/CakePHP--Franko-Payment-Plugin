@@ -1,4 +1,4 @@
-This script makes gpg-encrypted backups of your bitcoin wallet.
+This script makes gpg-encrypted backups of your franko wallet.
 
 = How to use =
 
