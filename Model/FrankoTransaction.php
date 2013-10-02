@@ -334,7 +334,7 @@ class FrankoTransaction extends PaymentAppModel {
 		}
 		$ownAccounts = array();
 		foreach ($accounts as $ownAccount => $amount) {
-			$ownAccounts[$ownAccount] = $ownAccount . ' ('.$amount.' BTC)';
+			$ownAccounts[$ownAccount] = $ownAccount . ' ('.$amount.' FRK)';
 		}
 		return $ownAccounts;
 	}

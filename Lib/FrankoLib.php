@@ -318,9 +318,9 @@ class FrankoLib extends Franko {
 	}
 
 	/**
-	 * Returns total BTC sent by an address. Using this data is almost always a very
-bad idea, as the amount of BTC sent by an address is usually very different
-from the amount of BTC sent by the person owning the address
+	 * Returns total FRK sent by an address. Using this data is almost always a very
+bad idea, as the amount of FRK sent by an address is usually very different
+from the amount of FRK sent by the person owning the address
 	 * 2011-07-16 ms
 	 */
 	public function getTotalSentByAddress($address) {
@@ -379,7 +379,7 @@ hash: transactions in blocks up to and including this block will not be returned
 /** backup methods if localhost is not running frankod service **/
 
 	/**
-	 * Returns total BTC received by an address. Sends are not taken into account.
+	 * Returns total FRK received by an address. Sends are not taken into account.
 The optional second parameter specifies the required number of confirmations for
 transactions comprising the balance
 	 * @return float $amount
