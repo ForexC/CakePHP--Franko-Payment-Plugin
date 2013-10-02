@@ -1,8 +1,8 @@
 <?php
 
 App::import('Vendor', array('Payment.franko/franko'));
-if (!defined('BITCOIN_CERTIFICATE')) {
-	define('BITCOIN_CERTIFICATE', APP . 'Config' . DS.'server.cert');
+if (!defined('FRANKO_CERTIFICATE')) {
+	define('FRANKO_CERTIFICATE', APP . 'Config' . DS.'server.cert');
 }
 
 /**
@@ -48,7 +48,7 @@ class FrankoLib extends Franko {
 		extract($this->settings, EXTR_OVERWRITE);
 
 		if ($this->settings['certificate'] === true) {
-			$this->settings['certificate'] = BITCOIN_CERTIFICATE;
+			$this->settings['certificate'] = FRANKO_CERTIFICATE;
 		}
 
 		if (!Configure::read('Franko.username') || !Configure::read('Franko.password')) {

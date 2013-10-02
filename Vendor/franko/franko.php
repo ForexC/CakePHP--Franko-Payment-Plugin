@@ -13,7 +13,7 @@
  * @author theymos - theymos @ http://franko.org/smf
  */
 
-define("BITCOIN_ADDRESS_VERSION", "00");// this is a hex byte
+define("FRANKO_ADDRESS_VERSION", "23");// this is a hex byte
 /**
  * Franko utility functions class
  *
@@ -139,7 +139,7 @@ class Franko {
    * @return string Franko address
    * @access public
    */
-  public static function hash160ToAddress($hash160, $addressversion = BITCOIN_ADDRESS_VERSION) {
+  public static function hash160ToAddress($hash160, $addressversion = FRANKO_ADDRESS_VERSION) {
     $hash160 = $addressversion . $hash160;
     $check = pack("H*", $hash160);
     $check = hash("sha256", hash("sha256", $check, true));
@@ -171,7 +171,7 @@ class Franko {
    * @return boolean
    * @access public
    */
-  public static function checkAddress($addr, $addressversion = BITCOIN_ADDRESS_VERSION) {
+  public static function checkAddress($addr, $addressversion = FRANKO_ADDRESS_VERSION) {
     $addr = self::decodeBase58($addr);
     if (strlen($addr) != 50) {
       return false;
